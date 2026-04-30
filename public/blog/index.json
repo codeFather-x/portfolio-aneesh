@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "building-llm-routers",
+    "title": "Building a Production LLM Router in Go",
+    "date": "2025-03-15T00:00:00.000Z",
+    "tags": [
+      "AI",
+      "Go",
+      "Infrastructure"
+    ],
+    "excerpt": "How I built a routing layer that intelligently dispatches inference requests across multiple model providers based on cost, latency, and capability requirements.",
+    "readingTime": "2 min read"
+  },
+  {
+    "slug": "rag-chunking-strategies",
+    "title": "RAG Chunking Strategies That Actually Work in Production",
+    "date": "2025-01-28T00:00:00.000Z",
+    "tags": [
+      "AI",
+      "RAG",
+      "Python"
+    ],
+    "excerpt": "After testing eight chunking approaches on five different corpus types, here's what I've learned about the tradeoffs — and when each strategy breaks down.",
+    "readingTime": "2 min read"
+  }
+]
