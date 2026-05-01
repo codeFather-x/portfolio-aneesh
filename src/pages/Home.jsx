@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
-// import Globe from '../components/Globe'
-import { Globe } from "@/components/ui/globe"
+import Globe from '../components/Globe'
 import About from '../components/About'
 import Contact from '../components/Contact'
 
@@ -21,36 +20,34 @@ export default function Home() {
 	  `}</style>
 
 	  <section style={{ position:'relative', height:'100vh', display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden' }}>
-		<div className="bg-background relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-lg border px-40 pt-8 pb-40 md:pb-60">
-		  <span className="pointer-events-none bg-linear-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl leading-none font-semibold whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10">
-			Globe
-		  </span>
-		  <Globe className="top-28" />
-		  <div className="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))]" />
-		</div>
+		<Globe />
 
 		
-		<div style={{ position:'relative', zIndex:10, textAlign:'center', pointerEvents:'none' }}>
-		  <p style={{ ...fadeUp(0.3), fontFamily:'var(--font-mono)', fontSize:'0.75rem', color:'var(--cyan)', letterSpacing:'0.25em', textTransform:'uppercase', marginBottom:'1.2rem' }}>
-			// software engineer — mainly a problem solver
-		  </p>
+		<div style={{ position:'absolute', top:'40%', left:'50%', transform:'translate(-50%, -50%)', zIndex:10, textAlign:'center', pointerEvents:'none', overflow:'hidden' }}>
+			<p style={{ ...fadeUp(0.7), textAlign:'left',fontFamily:'var(--font-body)', fontSize:'1.05rem', fontWeight:500, color:'var(--text-muted)', marginTop:'1.2rem' }}>
+				Hi! My name is
+		  	</p>
 		  <h1 style={{ ...fadeUp(0.5), fontFamily:'var(--font-display)', fontSize:'clamp(3.5rem,8vw,7rem)', fontWeight:800, lineHeight:0.95, letterSpacing:'-0.02em', color:'#fff' }}>
 			Aneesh<br /><span style={{ color:'var(--cyan)' }}>Dua</span>
 		  </h1>
 		  <p style={{ ...fadeUp(0.7), fontFamily:'var(--font-body)', fontSize:'1.05rem', fontWeight:300, color:'var(--text-muted)', marginTop:'1.2rem' }}>
 			Building distributed systems &amp; intelligent infrastructure
 		  </p>
-		  <div style={{ ...fadeUp(0.9), display:'flex', gap:'1rem', justifyContent:'center', marginTop:'2.5rem', pointerEvents:'all' }}>
+		  <p style={{ ...fadeUp(0.3), fontFamily:'var(--font-mono)', fontSize:'0.75rem', color:'var(--cyan)', letterSpacing:'0.25em', textTransform:'uppercase', marginBottom:'1.2rem' }}>
+			// software engineer — mainly a problem solver
+		  </p>
+		  {/* <div style={{ ...fadeUp(0.9), display:'flex', gap:'1rem', justifyContent:'center', marginTop:'2.5rem', pointerEvents:'all' }}>
 			<Link to="/projects" className="btn-primary">View Work</Link>
-		  </div>
+		  </div> */}
 		</div>
 
 		<div style={{ position:'absolute', bottom:'2rem', left:'50%', transform:'translateX(-50%)', display:'flex', flexDirection:'column', alignItems:'center', gap:'0.5rem', animation:'fadeUp 1s ease 1.5s both' }}>
 		  <span style={{ fontFamily:'var(--font-mono)', fontSize:'0.6rem', color:'var(--text-dim)', letterSpacing:'0.2em', textTransform:'uppercase' }}>Scroll</span>
 		  <div style={{ width:'0.5px', height:'48px', background:'linear-gradient(to bottom, var(--cyan), transparent)', animation:'scrollPulse 2s ease-in-out infinite' }} />
 		</div>
-	  <About />
 	  </section>
+		<About />
+
 	  <Contact />
 	</>
   )
