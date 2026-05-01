@@ -23,19 +23,20 @@ export default function Home() {
 		<Globe />
 
 		
-		<div style={{ position:'absolute', top:'40%', left:'50%', transform:'translate(-50%, -50%)', zIndex:10, textAlign:'center', pointerEvents:'none', overflow:'hidden' }}>
+		<div style={{ position:'absolute', top:'40%', left:'30%', transform:'translate(-50%, -50%)', zIndex:10, textAlign:'left', pointerEvents:'none', overflow:'hidden' }}>
 			<p style={{ ...fadeUp(0.7), textAlign:'left',fontFamily:'var(--font-body)', fontSize:'1.05rem', fontWeight:500, color:'var(--text-muted)', marginTop:'1.2rem' }}>
-				Hi! My name is
+				Hey there! I am
 		  	</p>
 		  <h1 style={{ ...fadeUp(0.5), fontFamily:'var(--font-display)', fontSize:'clamp(3.5rem,8vw,7rem)', fontWeight:800, lineHeight:0.95, letterSpacing:'-0.02em', color:'#fff' }}>
 			Aneesh<br /><span style={{ color:'var(--cyan)' }}>Dua</span>
 		  </h1>
 		  <p style={{ ...fadeUp(0.7), fontFamily:'var(--font-body)', fontSize:'1.05rem', fontWeight:300, color:'var(--text-muted)', marginTop:'1.2rem' }}>
-			Building distributed systems &amp; intelligent infrastructure
+			I build things for the web.
 		  </p>
-		  <p style={{ ...fadeUp(0.3), fontFamily:'var(--font-mono)', fontSize:'0.75rem', color:'var(--cyan)', letterSpacing:'0.25em', textTransform:'uppercase', marginBottom:'1.2rem' }}>
-			// software engineer — mainly a problem solver
-		  </p>
+		  
+		  {/* <p style={{ ...fadeUp(0.3), fontFamily:'var(--font-mono)', fontSize:'0.75rem', color:'var(--cyan)', letterSpacing:'0.25em', textTransform:'uppercase', marginBottom:'1.2rem' }}>
+			// software engineer — solve problems and deliver products
+		  </p> */}
 		  {/* <div style={{ ...fadeUp(0.9), display:'flex', gap:'1rem', justifyContent:'center', marginTop:'2.5rem', pointerEvents:'all' }}>
 			<Link to="/projects" className="btn-primary">View Work</Link>
 		  </div> */}
