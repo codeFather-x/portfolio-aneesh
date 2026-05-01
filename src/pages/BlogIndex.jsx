@@ -31,12 +31,9 @@ export default function BlogIndex() {
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 3rem' }}>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--cyan)', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.8rem' }}>// Blog</p>
         <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.1, marginBottom: '0.8rem' }}>
-          Thoughts on systems,<br />AI, and engineering
+          Thoughts on AI, engineering and life...
         </h1>
-        <p style={{ color: 'var(--text-muted)', fontWeight: 300, marginBottom: '3rem' }}>
-          Drop your <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--cyan-dim)', background: 'var(--bg3)', padding: '0.1rem 0.4rem' }}>.md</code> files in <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--cyan-dim)', background: 'var(--bg3)', padding: '0.1rem 0.4rem' }}>public/blog/posts/</code> and rebuild — they appear here automatically.
-        </p>
-
+        <br></br>
         {allTags.length > 0 && (
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2.5rem' }}>
             <button className={`tag-btn ${!activeTag ? 'active' : ''}`} onClick={() => setActiveTag(null)}>All</button>

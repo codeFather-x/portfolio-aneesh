@@ -1,4 +1,4 @@
----
+<!-- ---
 title: RAG Chunking Strategies That Actually Work in Production
 date: 2025-01-28
 tags: [AI, RAG, Python]
@@ -59,4 +59,4 @@ def chunk_python_file(source: str) -> list[str]:
 
 ## The hybrid approach
 
-In ContextForge, I ended up with a classifier that detects document type and routes to the appropriate strategy. It's more infrastructure but the retrieval quality improvement is significant — around 18% increase in answer faithfulness on our eval set.
+In ContextForge, I ended up with a classifier that detects document type and routes to the appropriate strategy. It's more infrastructure but the retrieval quality improvement is significant — around 18% increase in answer faithfulness on our eval set. -->

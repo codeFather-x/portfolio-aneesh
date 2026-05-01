@@ -1,26 +1,94 @@
 [
   {
-    "slug": "building-llm-routers",
-    "title": "Building a Production LLM Router in Go",
-    "date": "2025-03-15T00:00:00.000Z",
+    "slug": "2021-10-03-git-guide",
+    "title": "A Definitive guide to Git",
+    "date": "2021-10-03T00:00:00.000Z",
     "tags": [
-      "AI",
-      "Go",
-      "Infrastructure"
+      "Tech",
+      "Git"
     ],
-    "excerpt": "How I built a routing layer that intelligently dispatches inference requests across multiple model providers based on cost, latency, and capability requirements.",
-    "readingTime": "2 min read"
+    "excerpt": "Git is one of the most common skill among all sorts of developers. However, it also the one in which they struggle with in their initial years. I have also been in the same boat, hence while I was on the journey of learning it, I compiled all the resources I learnt from, in this guide. The guide also contains my inputs here and there.\n",
+    "readingTime": "23 min read"
   },
   {
-    "slug": "rag-chunking-strategies",
-    "title": "RAG Chunking Strategies That Actually Work in Production",
-    "date": "2025-01-28T00:00:00.000Z",
+    "slug": "2021-07-31-setup-linux",
+    "title": "How to automatically setup your linux environment",
+    "date": "2021-07-31T00:00:00.000Z",
     "tags": [
-      "AI",
-      "RAG",
-      "Python"
+      "Linux",
+      "Tech"
     ],
-    "excerpt": "After testing eight chunking approaches on five different corpus types, here's what I've learned about the tradeoffs — and when each strategy breaks down.",
-    "readingTime": "2 min read"
+    "excerpt": "Setting up linux is a common part of every developer's journey. However, the setup after OS installation is very tedious and time consuming. Or is it?\n",
+    "readingTime": "3 min read"
+  },
+  {
+    "slug": "2021-07-16-everyone-is-hacked",
+    "title": "Everyone is hacked",
+    "date": "2021-07-16T00:00:00.000Z",
+    "tags": [
+      "Cybersecurity",
+      "Tech"
+    ],
+    "excerpt": "With everything and everyone having immense online prescence, we need to address the elephant in the room, the security of an individual's data.\n",
+    "readingTime": "11 min read"
+  },
+  {
+    "slug": "2021-04-06-mandm",
+    "title": "The M&M of spiritual life",
+    "date": "2021-04-06T00:00:00.000Z",
+    "tags": [],
+    "excerpt": "Meditation and Mindfullness are one of the highly advised practices when we talk about healthy living and spirituality. But there are a lot of misconceptions and myths around these. And most of us don't know how to actually do these in our daily city life. Let's discuss.\n",
+    "readingTime": "7 min read"
+  },
+  {
+    "slug": "2021-03-24-ncbugbounty",
+    "title": "Writeup for NC-Bug-Bounty CTF Challenge",
+    "date": "2021-03-24T00:00:00.000Z",
+    "tags": [
+      "Cybersecurity",
+      "Tech"
+    ],
+    "excerpt": "Winja CTF 2021 was held on 6th March,2021 as part of NullCon 2021. I was a part of the dev team. Here is the writeup for the unsolved hard difficulty challenge NC-Bug-Bounty that I developed.\n",
+    "readingTime": "5 min read"
+  },
+  {
+    "slug": "who-vs-who",
+    "title": "Deciphering long lasting relationships",
+    "date": "2021-03-18T00:00:00.000Z",
+    "tags": [
+      "Life"
+    ],
+    "excerpt": "In close relationships, it is becoming difficult for people to resolve issues. Unable to resolve the conflict, unpleasant things are said which cannot be taken back and sometimes which ultimately requires the help of a counsellor. So am I saying that there is a way to avoid all of this while solving the issue without any exchange of unpleasantries? Yes I am. Period\n",
+    "readingTime": "6 min read"
+  },
+  {
+    "slug": "2019-06-23-hardening-counter",
+    "title": "Hardening VS Countermeasures for Cyber Security",
+    "date": "2019-06-23T00:00:00.000Z",
+    "tags": [
+      "Cybersecurity"
+    ],
+    "excerpt": "Cyber Attacks are exponentially increasing by the day. The omnipresence of Internet enabled devices around us makes such attacks terrorizing for us. Thus, to resist such threats, it is essential to develop mechanisms and protect our devices and networks. There are mainly two ways to go about it, either we build countermeasures against attacks or either we implement hardening of devices and connection methods. How should we go about it?\n",
+    "readingTime": "5 min read"
+  },
+  {
+    "slug": "2019-05-18-ddos",
+    "title": "DDoS-the Immortal hacks of the Internet",
+    "date": "2019-05-18T00:00:00.000Z",
+    "tags": [
+      "Cybersecurity"
+    ],
+    "excerpt": "Distributed Denial of Service(DDoS) Attacks have thronged the World Wide Web for the past 15 years. Even today we encounter websites that are “down” a.k.a unavailable and the reason for that more often than not are DDoS attacks. Even though the principle of these have remained the same, we still don’t have a fool proof way of preventing them. Not beating about the bush, let me throw light as to what they actually are and why they are still a cyber security challenge.\n",
+    "readingTime": "11 min read"
+  },
+  {
+    "slug": "2019-05-13-phishing",
+    "title": "Ever heard of E-conning?",
+    "date": "2019-05-13T00:00:00.000Z",
+    "tags": [
+      "Cybersecurity"
+    ],
+    "excerpt": "It is one of the biggest cybersecurity threats of 2019. “Phishing” is the technical term for the act of conning someone online in order to steal their confidential and sensitive information. I would rather call it E-conning so as to simply state what it really is.If something sounds too good to be true… there’s probably a scammer behind it.\n",
+    "readingTime": "6 min read"
   }
 ]
