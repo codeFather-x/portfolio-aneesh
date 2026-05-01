@@ -1,6 +1,6 @@
 const stats = [
   { num: '5+', label: 'Years building' },
-  { num: '12+', label: 'Projects shipped' },
+  { num: '19+', label: 'Research citations' },
   { num: '3', label: 'AI products in prod' },
   { num: '∞', label: 'Uptime target' },
 ]
@@ -12,15 +12,16 @@ export default function About() {
         01 / About
       </p>
       <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 800, lineHeight: 1.1, color: '#fff', marginBottom: '4rem' }}>
-        Engineering at the intersection<br />of scale &amp; intelligence
+        {/* Backend systems that don't flinch. AI pipelines that don't hallucinate. */}
+        Software Engineer - but mostly a problem solver
       </h2>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
         <div>
           {[
-            <>I'm a backend-focused software engineer with a deep interest in <strong style={{ color: 'var(--text)', fontWeight: 500 }}>AI systems, distributed architecture,</strong> and building infrastructure that's resilient and adaptive.</>,
-            <>I specialize in designing <strong style={{ color: 'var(--text)', fontWeight: 500 }}>high-throughput data pipelines</strong>, deploying machine learning models at scale, and engineering APIs that power real-world products used by millions.</>,
-            <>Currently exploring the frontier of <strong style={{ color: 'var(--text)', fontWeight: 500 }}>LLM-powered applications</strong>, retrieval-augmented generation, and agentic workflows — where software stops being a tool and starts becoming a collaborator.</>,
+            <>I'm a security focused software engineer and have an expertise in <strong style={{ color: 'var(--text)', fontWeight: 500 }}>AI systems, web apps with distributed services </strong> and building infrastructure that's resilient and adaptive.</>,
+            <>I specialize in solving problems with technology and I love to power real-world products used by millions.</>,
+            // <>Currently exploring the frontier of <strong style={{ color: 'var(--text)', fontWeight: 500 }}>LLM-powered applications</strong>, retrieval-augmented generation, and agentic workflows — where software stops being a tool and starts becoming a collaborator.</>,
           ].map((text, i) => (
             <p key={i} style={{ color: 'var(--text-muted)', fontWeight: 300, fontSize: '1.05rem', marginBottom: '1.3rem' }}>{text}</p>
           ))}

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 const links = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
-  { to: '/projects', label: 'Projects' },
+  // { to: '/projects', label: 'Projects' },
   { to: '/blog', label: 'Blog' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -34,7 +34,7 @@ export default function Nav() {
       transition: 'all 0.4s ease',
     }}>
       <NavLink to="/" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: 'var(--cyan)', letterSpacing: '0.1em' }}>
-        AC_SYS://
+        ./ANEESH_DUA
       </NavLink>
 
       <ul style={{ display: 'flex', gap: '2.5rem', listStyle: 'none' }}>
