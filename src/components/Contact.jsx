@@ -1,33 +1,34 @@
 import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import { EmailIcon, GitHubIcon, LinkedInIcon, ResumeIcon } from "./icons";
 
 const contactLinks = [
   {
-    icon: "@",
+    icon: EmailIcon,
     href: "mailto:workstuff.dua@gmail.com",
     label: "workstuff.dua@gmail.com",
   },
   {
-    icon: "</>",
+    icon: GitHubIcon,
     href: "https://github.com/codeFather-x",
     label: "github.com/codeFather-x",
   },
   {
-    icon: "in",
+    icon: LinkedInIcon,
     href: "https://www.linkedin.com/in/aneesh-dua-b6160b151/",
     label: "linkedin.com/in/aneesh-dua",
   },
+  {
+	icon: ResumeIcon,
+	href: "https://drive.google.com/file/d/1q2wcVv3-pGwIlBoFILeuVvCaZqQA2TR9/view?usp=sharing",
+	label: "My Resume",
+  }
 ];
 
 export default function Contact() {
-  const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-
-  const handle = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
-
   const [state, handleSubmit] = useForm("xnjwqwer");
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
+    return <p>Thanks for connecting! Looking forward to speak to you</p>;
   }
 
   return (
@@ -105,13 +106,12 @@ export default function Contact() {
                 marginBottom: "2rem",
               }}
             >
-              Fastest response via email. Connect on GitHub to see what I'm
-              building.
+              Fastest response on LinkedIn.
             </p>
             <div
               style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
             >
-              {contactLinks.map(({ icon, href, label }) => (
+              {contactLinks.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
@@ -121,45 +121,20 @@ export default function Contact() {
                   <span
                     style={{
                       color: "var(--cyan)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                       width: "20px",
-                      textAlign: "center",
-                      fontFamily: "var(--font-mono)",
-                      fontSize: "0.85rem",
+                      height: "20px",
                     }}
                   >
-                    {icon}
+                    <Icon />
                   </span>
                   {label}
                 </a>
               ))}
             </div>
           </div>
-
-          {/* <div>
-			{sent ? (
-			  <div style={{ border: '0.5px solid var(--border-bright)', padding: '3rem', textAlign: 'center', background: 'var(--cyan-glow)' }}>
-				<p style={{ fontFamily: 'var(--font-mono)', color: 'var(--cyan)', letterSpacing: '0.1em' }}>// Message received</p>
-				<p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.8rem', fontWeight: 300 }}>I'll get back to you shortly.</p>
-			  </div>
-			) : (
-			  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-				{[
-				  { label: 'Name', key: 'name', type: 'text', placeholder: 'Your name' },
-				  { label: 'Email', key: 'email', type: 'email', placeholder: 'your@email.com' },
-				].map(({ label, key, type, placeholder }) => (
-				  <div key={key} style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-					<label style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--text-muted)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>{label}</label>
-					<input type={type} className="form-input" placeholder={placeholder} value={form[key]} onChange={handle(key)} />
-				  </div>
-				))}
-				<div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-				  <label style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--text-muted)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Message</label>
-				  <textarea className="form-input" rows={5} placeholder="What are you working on?" value={form.message} onChange={handle('message')} />
-				</div>
-				<button className="btn-primary" onClick={() => setSent(true)}>Send Message</button>
-			  </div>
-			)}
-		  </div> */}
 
           {/* FORM */}
           <form onSubmit={handleSubmit}>
