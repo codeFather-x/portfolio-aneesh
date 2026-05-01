@@ -2,6 +2,7 @@
 import Globe from '../components/Globe'
 import About from '../components/About'
 import Contact from '../components/Contact'
+import SkillsMarquee from '../components/SkillsMarquee'
 
 import useHashScroll from '../hooks/useHashScroll'
 
@@ -46,13 +47,19 @@ export default function Home() {
 		  </div> */}
 		</div>
 
-		<div style={{ position:'absolute', bottom:'2rem', left:'50%', transform:'translateX(-50%)', display:'flex', flexDirection:'column', alignItems:'center', gap:'0.5rem', animation:'fadeUp 1s ease 1.5s both' }}>
+		<div
+			onClick={() => { window.location = "/#about"; hashScroll("about") }}
+		 	style={{ position:'absolute',cursor:'pointer', bottom:'2rem', left:'50%', transform:'translateX(-50%)', display:'flex', flexDirection:'column', alignItems:'center', gap:'0.5rem', animation:'fadeUp 1s ease 1.5s both' }}
+		>
 		  <span style={{ fontFamily:'var(--font-mono)', fontSize:'0.6rem', color:'var(--text-dim)', letterSpacing:'0.2em', textTransform:'uppercase' }}>Scroll</span>
 		  <div style={{ width:'0.5px', height:'48px', background:'linear-gradient(to bottom, var(--cyan), transparent)', animation:'scrollPulse 2s ease-in-out infinite' }} />
 		</div>
 	  </section>
 	  <section id="about">
 		<About />
+	  </section>
+	  <section id="skills">
+		<SkillsMarquee />
 	  </section>
 		<section id="contact">
 	  		<Contact />

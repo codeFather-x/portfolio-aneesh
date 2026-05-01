@@ -43,15 +43,15 @@ export default function Nav() {
             <NavLink
               to={to}
               end={to === '/'}
-              style={({ isActive }) => ({
+              style={() => ({
                 fontFamily: 'var(--font-mono)',
                 fontSize: '0.75rem',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: isActive ? 'var(--cyan)' : 'var(--text-muted)',
+                color: 'var(--cyan)',
                 transition: 'color 0.2s',
                 paddingBottom: '2px',
-                borderBottom: isActive ? '0.5px solid var(--cyan)' : '0.5px solid transparent',
+                borderBottom: '0.5px solid var(--cyan)',
               })}
             >
               {label}
