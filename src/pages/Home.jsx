@@ -1,13 +1,17 @@
-import { Link } from 'react-router-dom'
+
 import Globe from '../components/Globe'
 import About from '../components/About'
 import Contact from '../components/Contact'
+
+import useHashScroll from '../hooks/useHashScroll'
 
 const fadeUp = (delay = 0) => ({
   animation: `fadeUp 0.9s ease ${delay}s both`,
 })
 
 export default function Home() {
+
+	const hashScroll = useHashScroll();
   return (
 	<>
 	  <style>{`
@@ -47,9 +51,12 @@ export default function Home() {
 		  <div style={{ width:'0.5px', height:'48px', background:'linear-gradient(to bottom, var(--cyan), transparent)', animation:'scrollPulse 2s ease-in-out infinite' }} />
 		</div>
 	  </section>
+	  <section id="about">
 		<About />
-
-	  <Contact />
+	  </section>
+		<section id="contact">
+	  		<Contact />
+	    </section>
 	</>
   )
 }

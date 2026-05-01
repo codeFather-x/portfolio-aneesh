@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react'
 
 const links = [
   { to: '/', label: 'Home' },
-  { to: '/about', label: 'About' },
+  { to: '/#about', label: 'About' },
   // { to: '/projects', label: 'Projects' },
   { to: '/blog', label: 'Blog' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/#contact', label: 'Contact' },
 ]
 
 export default function Nav() {
