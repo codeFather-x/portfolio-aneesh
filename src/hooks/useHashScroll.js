@@ -1,20 +1,32 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useCallback, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 const useHashScroll = () => {
-  const { hash } = useLocation();
+  const { hash } = useLocation()
+
+  const scrollToHash = useCallback((targetHash) => {
+    if (!targetHash) return
+
+    const normalizedHash = targetHash.startsWith('#') ? targetHash : `#${targetHash}`
+    const element = document.getElementById(normalizedHash.slice(1))
+
+    if (!element) return
+
+    window.requestAnimationFrame(() => {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    })
+  }, [])
 
   useEffect(() => {
     if (hash) {
-      const element = document.getElementById(hash.replace('#', ''));
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }
+      scrollToHash(hash)
     }
-  }, [hash]);
-};
+  }, [hash, scrollToHash])
 
-export default useHashScroll;
+  return scrollToHash
+}
+
+export default useHashScroll

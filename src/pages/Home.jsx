@@ -1,18 +1,16 @@
-
-import Globe from '../components/Globe'
 import About from '../components/About'
 import Contact from '../components/Contact'
 import SkillsMarquee from '../components/SkillsMarquee'
 
 import useHashScroll from '../hooks/useHashScroll'
+import MyGlobe from '@/components/Globe2'
 
 const fadeUp = (delay = 0) => ({
   animation: `fadeUp 0.9s ease ${delay}s both`,
 })
 
 export default function Home() {
-
-	const hashScroll = useHashScroll();
+	const scrollToHash = useHashScroll()
   return (
 	<>
 	  <style>{`
@@ -24,9 +22,11 @@ export default function Home() {
 		.btn-ghost:hover { background:var(--cyan-glow) }
 	  `}</style>
 
-	  <section style={{ position:'relative', height:'100vh', display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden' }}>
-		<Globe />
-
+	  <section
+        id="home"
+       style={{ position:'relative', height:'100vh', display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden' }}>
+		{/* <Globe /> */}
+		<MyGlobe />
 		
 		<div style={{ position:'absolute', top:'40%', left:'30%', transform:'translate(-50%, -50%)', zIndex:10, textAlign:'left', pointerEvents:'none', overflow:'hidden' }}>
 			<p style={{ ...fadeUp(0.7), textAlign:'left',fontFamily:'var(--font-body)', fontSize:'1.05rem', fontWeight:500, color:'var(--text-muted)', marginTop:'1.2rem' }}>
@@ -47,21 +47,21 @@ export default function Home() {
 		  </div> */}
 		</div>
 
-		<div
-			onClick={() => { window.location = "/#about"; hashScroll("about") }}
+	<div
+			onClick={() => scrollToHash('about')}
 		 	style={{ position:'absolute',cursor:'pointer', bottom:'2rem', left:'50%', transform:'translateX(-50%)', display:'flex', flexDirection:'column', alignItems:'center', gap:'0.5rem', animation:'fadeUp 1s ease 1.5s both' }}
 		>
 		  <span style={{ fontFamily:'var(--font-mono)', fontSize:'0.6rem', color:'var(--text-dim)', letterSpacing:'0.2em', textTransform:'uppercase' }}>Scroll</span>
 		  <div style={{ width:'0.5px', height:'48px', background:'linear-gradient(to bottom, var(--cyan), transparent)', animation:'scrollPulse 2s ease-in-out infinite' }} />
 		</div>
 	  </section>
-	  <section id="about">
+	  <section id="about" style={{ scrollMarginTop: 'calc(var(--nav-h) + 1rem)' }}>
 		<About />
 	  </section>
-	  <section id="skills">
+	  <section id="skills" style={{ scrollMarginTop: 'calc(var(--nav-h) + 1rem)' }}>
 		<SkillsMarquee />
 	  </section>
-		<section id="contact">
+		<section id="contact" style={{ scrollMarginTop: 'calc(var(--nav-h) + 1rem)' }}>
 	  		<Contact />
 	    </section>
 	</>

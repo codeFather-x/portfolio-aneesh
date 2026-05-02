@@ -1,8 +1,8 @@
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 const links = [
-  { to: '/', label: 'Home' },
+  { to: '/#home', label: 'Home' },
   { to: '/#about', label: 'About' },
   // { to: '/projects', label: 'Projects' },
   { to: '/blog', label: 'Blog' },
@@ -11,16 +11,12 @@ const links = [
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const { pathname } = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  useEffect(() => setMenuOpen(false), [pathname])
 
   return (
     <nav style={{
