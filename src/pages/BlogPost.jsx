@@ -27,14 +27,31 @@ export default function BlogPost() {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    fetch(`/blog/posts/${slug}.md`)
-      .then(r => { if (!r.ok) throw new Error(); return r.text() })
-      .then(raw => {
-        const { meta, content } = parseFrontmatter(raw)
-        setPost({ meta, content })
-        setLoading(false)
-      })
-      .catch(() => { setError(true); setLoading(false) })
+    const tryFetch = async () => {
+      // try without extension first (GitHub Pages behaviour)
+      const urls = [
+        `/blog/posts/${slug}.md`,
+        `/blog/posts/${slug}`,
+      ]
+  
+      for (const url of urls) {
+        try {
+          const res = await fetch(url)
+          if (res.ok) {
+            const raw = await res.text()
+            const { meta, content } = parseFrontmatter(raw)
+            setPost({ meta, content })
+            setLoading(false)
+            return
+          }
+        } catch (_) {}
+      }
+  
+      setError(true)
+      setLoading(false)
+    }
+  
+    tryFetch()
   }, [slug])
 
   if (loading) return (
