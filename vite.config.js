@@ -40,6 +40,7 @@ function blogIndexPlugin() {
 
 export default defineConfig({
   plugins: [react(), blogIndexPlugin()],
+  base: "/",
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
