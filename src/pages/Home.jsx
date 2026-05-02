@@ -1,6 +1,9 @@
+import { useEffect, useRef } from 'react'
+
 import About from '../components/About'
 import Contact from '../components/Contact'
 import SkillsMarquee from '../components/SkillsMarquee'
+import '@dotlottie/player-component'
 
 import useHashScroll from '../hooks/useHashScroll'
 import MyGlobe from '@/components/Globe2'
@@ -10,7 +13,36 @@ const fadeUp = (delay = 0) => ({
 })
 
 export default function Home() {
+	const scrollAnimationRef = useRef(null)
 	const scrollToHash = useHashScroll()
+
+  useEffect(() => {
+    const player = scrollAnimationRef.current
+    if (!player) return
+
+    const playScrollCue = () => {
+      player.setLooping?.(true)
+      player.seek?.('35%')
+      player.play?.()
+    }
+
+    const restartScrollCue = () => {
+      player.seek?.(0)
+      player.play?.()
+    }
+
+    player.addEventListener('ready', playScrollCue)
+    player.addEventListener('data_ready', playScrollCue)
+    player.addEventListener('complete', restartScrollCue)
+    playScrollCue()
+
+    return () => {
+      player.removeEventListener('ready', playScrollCue)
+      player.removeEventListener('data_ready', playScrollCue)
+      player.removeEventListener('complete', restartScrollCue)
+    }
+  }, [])
+
   return (
 	<>
 	  <style>{`
@@ -47,13 +79,39 @@ export default function Home() {
 		  </div> */}
 		</div>
 
-	<div
+	    <button
+			type="button"
 			onClick={() => scrollToHash('about')}
-		 	style={{ position:'absolute',cursor:'pointer', bottom:'2rem', left:'50%', transform:'translateX(-50%)', display:'flex', flexDirection:'column', alignItems:'center', gap:'0.5rem', animation:'fadeUp 1s ease 1.5s both' }}
+		 	style={{
+				position: 'absolute',
+				zIndex: 20,
+				bottom: 'max(1.25rem, env(safe-area-inset-bottom))',
+				left: 0,
+				right: 0,
+				margin: '0 auto',
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'center',
+				gap: '0.5rem',
+				background: 'transparent',
+				border: 'none',
+				padding: 0,
+				cursor: 'pointer',
+			}}
+			aria-label="Scroll to about section"
 		>
-		  <span style={{ fontFamily:'var(--font-mono)', fontSize:'0.6rem', color:'var(--text-dim)', letterSpacing:'0.2em', textTransform:'uppercase' }}>Scroll</span>
-		  <div style={{ width:'0.5px', height:'48px', background:'linear-gradient(to bottom, var(--cyan), transparent)', animation:'scrollPulse 2s ease-in-out infinite' }} />
-		</div>
+		  <dotlottie-player
+			ref={scrollAnimationRef}
+			src="/scroll-animated.json"
+			autoplay
+			loop="true"
+			renderer="svg"
+			background="transparent"
+			aria-hidden="true"
+			style={{ width:'3rem', height:'3rem', display:'block', opacity:1, filter:'drop-shadow(0 0 12px rgba(0,245,255,0.75))', pointerEvents:'none' }}
+		  />
+		  {/* <div style={{ width:'0.5px', height:'48px', background:'linear-gradient(to bottom, var(--cyan), transparent)', animation:'scrollPulse 2s ease-in-out infinite' }} /> */}
+		</button>
 	  </section>
 	  <section id="about" style={{ scrollMarginTop: 'calc(var(--nav-h) + 1rem)' }}>
 		<About />

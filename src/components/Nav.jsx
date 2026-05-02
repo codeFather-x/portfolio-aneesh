@@ -19,21 +19,45 @@ export default function Nav() {
   }, [])
 
   return (
-    <nav style={{
-      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-      height: 'var(--nav-h)',
-      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-      padding: '0 3rem',
-      background: scrolled ? 'rgba(5,8,16,0.85)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(20px)' : 'none',
-      borderBottom: scrolled ? '0.5px solid var(--border)' : '0.5px solid transparent',
-      transition: 'all 0.4s ease',
-    }}>
-      <NavLink to="/" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: 'var(--cyan)', letterSpacing: '0.1em' }}>
+    <>
+      <style>{`
+        @media (max-width: 640px) {
+          .nav-brand {
+            display: none;
+          }
+
+          .nav-links {
+            gap: 1.25rem !important;
+          }
+
+          .nav-shell {
+            padding: 0 1rem !important;
+          }
+        }
+      `}</style>
+
+    <nav
+      className="nav-shell"
+      style={{
+        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
+        height: 'var(--nav-h)',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        padding: '0 3rem',
+        background: scrolled ? 'rgba(5,8,16,0.85)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(20px)' : 'none',
+        borderBottom: scrolled ? '0.5px solid var(--border)' : '0.5px solid transparent',
+        transition: 'all 0.4s ease',
+      }}
+    >
+      <NavLink
+        to="/"
+        className="nav-brand"
+        style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: 'var(--cyan)', letterSpacing: '0.1em' }}
+      >
         ./ANEESH_DUA
       </NavLink>
 
-      <ul style={{ display: 'flex', gap: '2.5rem', listStyle: 'none' }}>
+      <ul className="nav-links" style={{ display: 'flex', gap: '2.5rem', listStyle: 'none' }}>
         {links.map(({ to, label }) => (
           <li key={to}>
             <NavLink
@@ -56,5 +80,6 @@ export default function Nav() {
         ))}
       </ul>
     </nav>
+    </>
   )
 }
