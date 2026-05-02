@@ -6,9 +6,13 @@
     <title>Redirecting...</title>
     <script>
       (function () {
+        var routes = new Set(['blog', 'projects'])
+        var parts = location.pathname.split('/').filter(Boolean)
+        var first = parts[0]
+        var base = !first || routes.has(first) ? '/' : '/' + first + '/'
         var redirect = location.pathname + location.search + location.hash
         sessionStorage.setItem('gh-pages-redirect', redirect)
-        location.replace('/')
+        location.replace(base)
       })()
     </script>
   </head>
