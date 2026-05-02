@@ -43,7 +43,7 @@ export default function About() {
         <div className="about-copy">
           {[
             <>I'm a security focused software engineer and have an expertise in <strong style={{ color: 'var(--text)', fontWeight: 500 }}>AI systems, web apps with distributed services </strong> and building infrastructure that's resilient and adaptive.</>,
-            <>I specialize in solving problems with technology and I love to power real-world products used by millions.</>,
+            <>I specialize in solving business problems with technology and I love to power real-world products used by millions.</>,
             // <>Currently exploring the frontier of <strong style={{ color: 'var(--text)', fontWeight: 500 }}>LLM-powered applications</strong>, retrieval-augmented generation, and agentic workflows — where software stops being a tool and starts becoming a collaborator.</>,
           ].map((text, i) => (
             <p key={i} style={{ color: 'var(--text-muted)', fontWeight: 300, fontSize: '1.05rem', marginBottom: '1.3rem' }}>{text}</p>

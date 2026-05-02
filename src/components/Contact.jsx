@@ -88,9 +88,7 @@ export default function Contact() {
             lineHeight: 1.1,
           }}
         >
-          Let's build something
-          <br />
-          that matters
+          Let's talk!
         </h2>
 
         <div className="contact-grid">
@@ -103,7 +101,7 @@ export default function Contact() {
                 marginBottom: "1.3rem",
               }}
             >
-              Whether you're looking to bring on a backend engineer, explore AI
+              Whether you're looking to bring on an engineer, explore AI
               infrastructure challenges, or collaborate on a research project —
               I'm always open to interesting conversations.
             </p>
