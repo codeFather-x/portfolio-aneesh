@@ -15,6 +15,16 @@ const skills = [
 
 export default function SkillsMarquee() {
   return (
+    <>
+      <style>{`
+        @media (max-width: 640px) {
+          .skills-marquee-img {
+            min-height: 60px !important;
+            max-height: 80px !important;
+          }
+        }
+      `}</style>
+
     <section style={{ padding: '3rem 0'}}>
       
       <Marquee gradient={false} speed={50} pauseOnHover={true}>
@@ -47,7 +57,7 @@ export default function SkillsMarquee() {
                 e.currentTarget.style.boxShadow = 'none'
               }}
             >
-              <img src={skill.svg} alt={skill.name} style={{ minHeight: '80px',maxHeight: '100px', maxWidth: '300px', width: 'auto', height: 'auto', objectFit: 'fill', filter: `drop-shadow(0 0 10px ${skill.color}00)` }} />
+              <img className="skills-marquee-img" src={skill.svg} alt={skill.name} style={{ minHeight: '80px',maxHeight: '100px', maxWidth: '300px', width: 'auto', height: 'auto', objectFit: 'fill', filter: `drop-shadow(0 0 10px ${skill.color}00)` }} />
               {/* <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.95rem', fontWeight: 500, color: '#fff' }}>
                 {skill.name}
               </span> */}
@@ -56,5 +66,6 @@ export default function SkillsMarquee() {
         </div>
       </Marquee>
     </section>
+    </>
   )
 }
